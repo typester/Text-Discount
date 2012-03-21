@@ -81,7 +81,18 @@ __END__
 
 =head1 NAME
 
-Text::Discount - 
+Text::Discount - yet another discount binding implemented all public functions.
+
+=head1 SYNOPSIS
+
+    use Text::Discount;
+    
+    my $m = Text::Discount->new($text, MKD_TOC | MKD_EXTRA_FOOTNOTE);
+    print $m->document; # print html
+
+=head1 DESCRIPTION
+
+This module provides perl interface to Discount that is C implementation of markdown format by David Parsons.
 
 =head1 AUTHOR
 
