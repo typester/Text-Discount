@@ -1,5 +1,6 @@
 package Text::Discount;
 use strict;
+use Carp;
 use XSLoader;
 use parent 'Exporter';
 
@@ -56,6 +57,16 @@ sub new_from_fh {
 
     my $self = $class->_new_from_file($fh, $flags);
     $self->compile($flags);
+
+    $self;
+}
+
+sub new_from_file {
+    my ($class, $file, $flags) = @_;
+
+    open my $fh, '<', $file or croak $!;
+    my $self = $class->new_from_fh($fh);
+    close $fh;
 
     $self;
 }
