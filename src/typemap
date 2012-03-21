@@ -1,0 +1,6 @@
+TYPEMAP
+MMIOT* T_MMIOT
+
+INPUT
+T_MMIOT
+    $var = ($type)mg_find(SvRV($arg), PERL_MAGIC_ext)->mg_obj;
