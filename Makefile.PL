@@ -3,6 +3,9 @@ use inc::Module::Install;
 name 'Text-Discount';
 all_from 'lib/Text/Discount.pm';
 
+requires 'parent';
+requires 'XSLoader';
+
 use_ppport 3.19;
 cc_src_paths 'src';
 cc_include_paths 'deps/discount';
