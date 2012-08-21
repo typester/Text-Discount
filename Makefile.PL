@@ -6,7 +6,7 @@ all_from 'lib/Text/Discount.pm';
 requires 'parent';
 requires 'XSLoader';
 
-use_ppport 3.19;
+use_ppport 3.20;
 cc_src_paths 'src';
 cc_include_paths 'deps/discount';
 cc_warnings;
@@ -18,7 +18,7 @@ makemaker_args->{MYEXTLIB} = 'deps/discount/libmarkdown$(LIB_EXT)';
     sub postamble {
         <<'__EOF__';
 $(MYEXTLIB):
-	cd deps/discount && sh configure.sh && $(MAKE)
+	cd deps/discount && sh configure.sh --enable-all-features && $(MAKE)
 __EOF__
     }
 }
