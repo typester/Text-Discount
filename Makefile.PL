@@ -18,7 +18,7 @@ makemaker_args->{MYEXTLIB} = 'deps/discount/libmarkdown$(LIB_EXT)';
     sub postamble {
         <<'__EOF__';
 $(MYEXTLIB):
-	cd deps/discount && sh configure.sh --enable-all-features && $(MAKE)
+	cd deps/discount && sh configure.sh --enable-all-features --with-id-anchor && $(MAKE)
 __EOF__
     }
 }
